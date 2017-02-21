@@ -1,0 +1,31 @@
+<h1>Libros Subidos</h1>
+<div class="container">
+  <div class="row">
+    <p>Buscar por código <input type="text" ng-model="busqueda"></p>
+    <table class="table table-bordered table-hover table-condensed">
+
+      <tr style="font-weight: bold; text-align: center;">
+        <td>Código</td>
+        <td>Nombre</td>
+        <td>Acción</td>
+
+
+      </tr>
+      <tr ng-repeat="libro in libros | filter: busqueda">
+        <td>{{libro.id}}</td>
+        <td>{{libro.nombre}}</td>
+
+        <td><a href="https://distribuida-libros.herokuapp.com/LibrosSubidos/{{libro.nombre}}"class="btn btn-success btn-xs">
+          <span class="glyphicon glyphicon-download"></span> Descargar</a></td>
+
+      </tr>
+
+    </table>
+    <p>&nbsp;</p>
+    <p></p>
+    <!--<button class="btn btn-success" ng-click="logout()">cerrar sesion</button>-->
+
+    <center><a href="#/login" ng-click="logout()" class="btn btn-primary">Cerrar Sesion</a></center>
+    <p>&nbsp;</p>
+  </div>
+</div>

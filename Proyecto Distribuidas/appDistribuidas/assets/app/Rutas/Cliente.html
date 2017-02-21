@@ -1,0 +1,82 @@
+<div class="container">
+  <center>
+    <h1>Registrarse</h1>
+  </center>
+  <hr>
+  <div class="row">
+
+    <center>
+      <img src="http://docs.ispconfig.org/wp-content/uploads/2010/10/user-group-icon.png" alt="Smiley face" height="187" width="164">
+    </center>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-12">
+      <div class="container">
+        <div class="row">
+          <form  name="clienteForm">
+
+                      <!--Usuario-->
+            <div ng-show="clienteForm.$submitted || clienteForm.usuario.$touched">
+            <div ng-show="clienteForm.usuario.$error.required" class="alert alert-danger animated bounceIn" role="alert">
+            <span aria-hidden="true"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+            <span class="sr-only">Error:</span> Necesita ingresar nombre de usuario.
+            </div></div>
+
+              <!--email-->
+              <div ng-show="clienteForm.$submitted || clienteForm.email.$touched">
+                <div ng-show="clienteForm.email.$error.required" class="alert alert-danger animated bounceIn" role="alert">
+                  <span aria-hidden="true"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+                  <span class="sr-only">Error:</span> Necesita ingresar email
+                </div>
+              </div>
+                <!--password-->
+                <div ng-show="clienteForm.$submitted || clienteForm.password.$touched">
+                  <div ng-show="clienteForm.password.$error.required" class="alert alert-danger animated bounceIn" role="alert">
+                    <span aria-hidden="true"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+                    <span class="sr-only">Error:</span> Necesita ingresar password.
+                  </div>
+                  </div>
+              <!--email-->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input required type="email" name="email" ng-model=" nuevoCliente.email" class="form-control" id="email" aria-describedby="ayuda" placeholder="email">
+                <small id="email" class="form-text text-muted">email.</small>
+              </div>
+              <!--Usuario-->
+              <div class="form-group">
+                <label for="usuario">Nombre de Usuario</label>
+                <input required ng-minlength="2" ng-maxlength="20" type="text" name="usuario" ng-model=" nuevoCliente.usuario" class="form-control" id="nombreUsuario" aria-describedby="ayuda" placeholder="Nombre de usuario">
+                <small id="ayuda" class="form-text text-muted">Nombre del usuario.</small>
+              </div>
+              <!--Password-->
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input required ng-minlength="2" ng-maxlength="20" type="password" name="password" ng-model=" nuevoCliente.password" class="form-control" id="password" aria-describedby="ayuda" placeholder="contraseña">
+                <small id="ayuda" class="form-text text-muted">Password.</small>
+              </div>
+
+            </div>
+            <div class="form-actions">
+              <button ng-click="crearCliente()" ng-disabled="clienteForm.$invalid " class="btn btn-primary">Registrarse</button>
+
+              <a href="#/login" class="btn btn-link">Cancelar</a>
+            </div>
+
+
+          </form>
+
+        </div>
+
+
+      </div>
+
+      <hr>
+
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

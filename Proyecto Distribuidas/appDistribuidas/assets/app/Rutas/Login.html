@@ -1,0 +1,21 @@
+
+<div class="col-md-6 col-md-offset-3">
+  <h2>Login</h2>
+  <form name="form"  role="form">
+    <div class="form-group" ng-class="{ 'has-error': form.usuario.$dirty && form.usuario.$error.required }">
+      <label for="usuario">usuario</label>
+      <input type="text" name="usuario" id="usuario" class="form-control" ng-model="user.usuario" required />
+      <span ng-show="form.usuario.$dirty && form.usuario.$error.required" class="help-block">usuario es requerido</span>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" class="form-control" ng-model="user.password" required />
+      <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password es requerido</span>
+    </div>
+    <div class="form-actions">
+       <!--<button type="submit" ng-disabled="form.$invalid" ng-mousedown= "login()" href="#/inicio" class="btn btn-primary">Login</button>-->
+      <a href="#/inicio" class="btn btn-primary" type="submit" ng-mousedown="login()">Ingresar</a>
+      <a href="#/registrarse" class="btn btn-link">Registrarse</a>
+    </div>
+  </form>
+</div>
